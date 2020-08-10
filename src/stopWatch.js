@@ -26,12 +26,12 @@ class StopWatch extends React.Component {
         this.start()
     }
     render() {
-
+        const current = new Date(this.state.count*1000) 
         return <div>
             <div style={{fontSize: 50 + "px"}}>
-                <span>{new Date(this.state.count*1000).getUTCHours()}h </span>
-                <span>{new Date(this.state.count*1000).getMinutes()}m </span>
-                <span>{new Date(this.state.count*1000).getSeconds()}s </span>
+                <span>{current.getUTCHours()}h </span>
+                <span>{current.getMinutes()}m </span>
+                <span>{current.getSeconds()}s </span>
             </div>
             <button disabled={this.state.isDisabled} onClick={this.start}>Start</button>
             <button onClick={this.reset}>Reset</button>
